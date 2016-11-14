@@ -11,6 +11,7 @@
 
   /** @ngInject */
   function AppController($scope, ngProgressFactory) {
+   
     var vm = this;
     vm.progressbar = ngProgressFactory.createInstance();
     vm.progressbar.setColor('#0088ce');

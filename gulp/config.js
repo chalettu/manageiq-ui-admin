@@ -7,7 +7,7 @@ module.exports = (function() {
   var client = src + 'client/';
   var server = src + 'server/';
   var tests = src + 'tests/';
-  var build = '../manageiq/public/ui/service/';
+  var build = '../manageiq/public/ui/admin/';
   var manageiqDir = '../manageiq/';
   var temp = './.tmp/';
   var reports = './reports/';
@@ -15,7 +15,7 @@ module.exports = (function() {
   var styles = 'partials/styles.html';
   var javascripts = 'partials/javascripts.html';
   var config = {};
-
+  var startPath = '/ui/admin/';
   /**
    * Files
    */
@@ -370,7 +370,7 @@ module.exports = (function() {
         ws: true,
       },
       port: 3001,
-      startPath: '/ui/service/',
+      startPath: startPath,
       files: [],
       ghostMode: {
         clicks: true,

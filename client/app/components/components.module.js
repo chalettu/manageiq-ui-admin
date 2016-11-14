@@ -2,6 +2,12 @@
   'use strict';
 
   angular.module('app.components', [
-    'app.core'
+    'app.core',
+    'ui.bootstrap',
+    'patternfly',
+    'svgBaseFix',
+    'dndLists',
+    'flowChart',
+    'ngDragDrop',
   ]);
 })();

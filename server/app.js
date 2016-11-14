@@ -55,9 +55,9 @@ switch (environment) {
     app.use(express.static('./'));
 
     // dev routes
-    app.use('/ui/service/', serviceApp);
+    app.use('/ui/admin/', serviceApp);
 
-    app.get('/ui/service', function (req, res) {
+    app.get('/ui/admin', function (req, res) {
       res.render('index');
     });
 
