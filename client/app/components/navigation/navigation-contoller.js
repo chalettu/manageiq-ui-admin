@@ -15,8 +15,6 @@
     '$state',
     '$document',
     'EventNotifications',
-    'ServerInfo',
-    'ProductInfo',
     NavigationCtrl]);
 
   /** @ngInject */
@@ -30,9 +28,7 @@
                           $modal,
                           $state,
                           $document,
-                          EventNotifications,
-                          ServerInfo,
-                          ProductInfo) {
+                          EventNotifications) {
     var vm = this;
     vm.text = Text.app;
     vm.user = Session.currentUser;
@@ -131,14 +127,7 @@
       title: Text.app.name,
     };
 
-    ServerInfo.promise.then( function() {
-      vm.about.productInfo = [
-        { name: __('Version: '), value: ServerInfo.data.version },
-        { name: __('Server Name: '), value: ServerInfo.data.server },
-        { name: __('User Name: '), value: ServerInfo.data.user },
-        { name: __('User Role: '), value: ServerInfo.data.role },
-      ];
-    });
+
     ProductInfo.promise.then( function() {
       vm.about.copyright = ProductInfo.data.copyright;
       vm.about.supportWebsiteText = ProductInfo.data.supportWebsiteText;

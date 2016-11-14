@@ -26,7 +26,7 @@
   }
 
   /** @ngInject */
-  function StateController($state, Text, API_LOGIN, API_PASSWORD, AuthenticationApi, Session, $rootScope, Notifications, Language, ServerInfo, ProductInfo, $window) {
+  function StateController($state, Text, API_LOGIN, API_PASSWORD, AuthenticationApi, Session, $rootScope, Notifications, Language, $window) {
     var vm = this;
 
     vm.text = Text.login;
@@ -50,7 +50,6 @@
       return AuthenticationApi.login(vm.credentials.login, vm.credentials.password)
         .then(Session.loadUser)
         .then(Session.requestWsToken)
-        .then(ServerInfo.set)
         .then(ProductInfo.set)
         .then(Language.onLogin)
         .then(function() {

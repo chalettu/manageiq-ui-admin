@@ -7,7 +7,7 @@
     .run(init);
 
   /** @ngInject */
-  function navigation(NavigationProvider) {
+  function navigation() {
     var dashboard = createItem(
       N_('Dashboard'),
       'dashboard',
@@ -86,16 +86,6 @@
       ),
     };
 
-    NavigationProvider.configure({
-      items: {
-        dashboard: dashboard,
-        services: services,
-        requests: requests,
-        marketplace: marketplace,
-        designer: designer,
-        administration: administration,
-      },
-    });
 
     function createItem(title, state, iconClass, badgeTooltip) {
       var item = {

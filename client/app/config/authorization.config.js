@@ -57,7 +57,7 @@
   }
 
   /** @ngInject */
-  function init($rootScope, $state, Session, $sessionStorage, logger, Language, ServerInfo, ProductInfo) {
+  function init($rootScope, $state, Session, $sessionStorage, logger, Language, ProductInfo) {
     var unregisterStart = $rootScope.$on('$stateChangeStart', changeStart);
     var unregisterError = $rootScope.$on('$stateChangeError', changeError);
     var unregisterSuccess = $rootScope.$on('$stateChangeSuccess', changeSuccess);
@@ -90,8 +90,6 @@
 
       Session.loadUser()
         .then(Language.onReload)
-        .then(ServerInfo.set)
-        .then(ProductInfo.set)
         .then(rbacReloadOrLogin(toState, toParams))
         .catch(badUser);
     }

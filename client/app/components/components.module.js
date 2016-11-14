@@ -5,9 +5,6 @@
     'app.core',
     'ui.bootstrap',
     'patternfly',
-    'svgBaseFix',
-    'dndLists',
-    'flowChart',
-    'ngDragDrop',
+    'svgBaseFix'
   ]);
 })();
